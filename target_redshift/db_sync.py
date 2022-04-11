@@ -69,6 +69,8 @@ def column_type(schema_property, with_length=True):
     elif 'integer' in property_type and 'string' in property_type:
         column_type = 'character varying'
         varchar_length = LONG_VARCHAR_LENGTH
+    elif 'bigint' in property_type:
+        column_type = 'bigint'
     elif 'integer' in property_type:
         column_type = 'numeric'
     elif 'boolean' in property_type:

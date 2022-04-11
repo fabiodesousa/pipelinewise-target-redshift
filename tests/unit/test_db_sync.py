@@ -69,6 +69,7 @@ class TestTargetRedshift(object):
         json_num =          {"type": ["number"]             }
         json_int =          {"type": ["integer"]            }
         json_int_or_str =   {"type": ["integer", "string"]  }
+        json_bigint =       {"type": ["bigint"]             }
         json_bool =         {"type": ["boolean"]            }
         json_obj =          {"type": ["object"]             }
         json_arr =          {"type": ["array"]              }
@@ -83,6 +84,7 @@ class TestTargetRedshift(object):
         assert mapper(json_num)          == 'double precision'
         assert mapper(json_int)          == 'numeric'
         assert mapper(json_int_or_str)   == 'character varying(65535)'
+        assert mapper(json_bigint)       == 'bigint'
         assert mapper(json_bool)         == 'boolean'
         assert mapper(json_obj)          == 'character varying(65535)'
         assert mapper(json_arr)          == 'character varying(65535)'
